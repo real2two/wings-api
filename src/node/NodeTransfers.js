@@ -1,5 +1,15 @@
 module.exports.NodeTransfers = {
-  // POST /api/transfers - This request is called by another dameon
+  /**
+   * Start a server transfer.
+   * 
+   * This should only be ran in another dameon.
+   */
+  // startServerTransfer() {
+  //   // POST /api/transfers
+  //   return this.fetch(`/api/transfers`, {
+  //     method: "post",
+  //   });
+  // },
   
   /**
    * Cancels an incoming server transfer request.
@@ -12,7 +22,7 @@ module.exports.NodeTransfers = {
   },
 
   /**
-   * Start a server transfer
+   * Create a server transfer
    */
   createServerTransfer({ uuid, url, token, start_on_completion = false }) {
     // POST /api/servers/:server/transfer
