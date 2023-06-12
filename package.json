@@ -1,6 +1,8 @@
 {
-  "name": "wings-api",
   "version": "0.0.1",
+  "name": "wings-api",
+  "description": "This is a library to handle Wings routes, and the panel's remote routes.",
+  "author": "Two",
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "dependencies": {
