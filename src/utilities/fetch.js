@@ -5,6 +5,7 @@ module.exports.fetch = async ({ url, route, data, options }) => {
     const req = await fetch(`${url}/${route.startsWith("/") ? route.slice(1) : route}`, {
       method: data.method || "get",
       headers: {
+        accept: "application/json",
         "content-type": "application/json",
         ...data.headers,
       },
@@ -14,10 +15,14 @@ module.exports.fetch = async ({ url, route, data, options }) => {
     if (!res.body) {
       delete res.body;
     } else {
-      if (options?.attemptToConvertJson) {
+      if (options?.attemptToConvertJson || res.status !== 200) {
         try {
           res.body = JSON.parse(res.body);
         } catch(_err) {}
+      } else {
+        res.body = {
+          content: res.body,
+        };
       }
     }
     return res;

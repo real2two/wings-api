@@ -9,7 +9,11 @@ module.exports.NodeServerFiles = {
     // GET /api/servers/:server/files/contents
     return this.fetch(
       `/api/servers/${encodeURIComponent(uuid)}/files/contents?file=${encodeURIComponent(file)}&download=${encodeURIComponent(download)}`,
-      {},
+      {
+        headers: {
+          accept: "text/plain",
+        },
+      },
       { attemptToConvertJson: false }
     );
   },
