@@ -23,20 +23,6 @@ module.exports.Panel = class {
   }
 
   fetch(route, data = {}, options) {
-    console.log({
-      url: this.remote,
-      route,
-      data: {
-        ...data,
-        headers: {
-          authorization: `Bearer ${this.token}.${this.token_id}`,
-          ...data.headers,
-        },
-      },
-      options: {
-        attemptToConvertJson: options?.attemptToConvertJson ?? true,
-      }
-    })
     return fetch({
       url: this.remote,
       route,
