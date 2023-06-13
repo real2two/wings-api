@@ -29,7 +29,7 @@ module.exports.Panel = class {
       data: {
         ...data,
         headers: {
-          authorization: `Bearer ${this.token}.${this.token_id}`,
+          authorization: `Bearer ${this.token_id}.${this.token}`,
           ...data.headers,
         },
       },
