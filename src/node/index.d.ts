@@ -18,7 +18,7 @@ export declare class Node {
   /**
    * Returns system information from the wings instance.
    */
-  getSystemInformation(): FetchResponsePromise;
+  getSystemInformation(v2Format?: boolean): FetchResponsePromise;
 
   /**
    * Returns the URL that allows for a backup to be downloaded by an individual

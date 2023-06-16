@@ -42,8 +42,8 @@ module.exports.NodeConfiguration = {
   /**
    * Returns system information from the wings instance.
    */
-  getSystemInformation() {
+  getSystemInformation(v2Format = false) {
     // GET /api/system
-    return this.fetch(`/api/system`);
+    return this.fetch(`/api/system${v2Format ? "?v=2" : ""}`);
   },
 };
