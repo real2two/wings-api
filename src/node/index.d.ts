@@ -44,7 +44,7 @@ export declare class Node {
    * - action must be either "start"; "stop"; "restart"; or "kill".
    * - wait_seconds must be a value between 0 to 300.
    */
-  changeServerPowerState(args: { uuid: string; action: Node.ServerPowerState; wait_seconds?: number }): FetchResponsePromise;
+  changeServerPowerState(args: { uuid: string; action: Node.NodeServerPowerState; wait_seconds?: number }): FetchResponsePromise;
   /**
    * Sends a command or multiple commands to a running server instance.
    * 
@@ -79,7 +79,7 @@ export declare class Node {
    * - backup_uuid becomes the backup file's name.
    * - ignore is the ignored files and directories.
    */
-  createServerBackup(args: { uuid: string; adapter: Node.BackupAdaptar; backup_uuid: string; ignore: string }): FetchResponsePromise;
+  createServerBackup(args: { uuid: string; adapter: Node.NodeBackupAdaptar; backup_uuid: string; ignore: string }): FetchResponsePromise;
   /**
    * Sends a request to Wings to begin restoring a backup for a server.
    * 
@@ -88,7 +88,7 @@ export declare class Node {
    * - truncate_directory is a boolean that determines if every file and folders should be deleted before restoring the backup. 
    * - download_url should be the download URL for the S3 bucket. This is only required when the adpater is "s3".
    */
-  restoreServerBackup(args: { uuid: string; backup_uuid: string; adapter: Node.BackupAdaptar; truncate_directory: boolean; download_url?: string }): FetchResponsePromise;
+  restoreServerBackup(args: { uuid: string; backup_uuid: string; adapter: Node.NodeBackupAdaptar; truncate_directory: boolean; download_url?: string }): FetchResponsePromise;
   /**
    * Deletes a backup from the daemon.
    */
