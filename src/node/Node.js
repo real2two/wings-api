@@ -61,7 +61,7 @@ module.exports.Node = class {
   }
 
   signJWT(values = {}, { token, expiresIn = "5m" } = { expiresIn: "5m" }) {
-    if (typeof values.server_uuid !== "string" || typeof values.sub !== "string") throw new Error("Either server_uuid or sub must be defined");
+    if (typeof values.server_uuid !== "string" && typeof values.sub !== "string") throw new Error("Either server_uuid or sub must be defined");
     const jti = crypto.MD5(values.server_uuid || values.sub).toString();
     return {
       jti,
