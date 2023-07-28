@@ -1,5 +1,5 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.7",
   "name": "wings-api",
   "description": "This is a library to handle Wings routes, and the panel's remote routes.",
   "author": "Two",
